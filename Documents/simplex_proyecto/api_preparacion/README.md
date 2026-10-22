@@ -1,5 +1,5 @@
 
-#  INTEGRANTE 2
+
 
 ## Proyecto
 Sistema web para resolver programación lineal
