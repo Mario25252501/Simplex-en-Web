@@ -1,0 +1,27 @@
+{
+  "tipo_optimizacion": "max",
+  "variables": 2,
+  "coeficientes_objetivo": [
+    1,
+    1
+  ],
+  "restricciones": [
+    {
+      "coeficientes": [
+        1,
+        1
+      ],
+      "signo": ">=",
+      "termino_independiente": 3
+    },
+    {
+      "coeficientes": [
+        1,
+        1
+      ],
+      "signo": "<=",
+      "termino_independiente": 1
+    }
+  ],
+  "no_negatividad": true
+}

@@ -1,0 +1,627 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "API Motor Simplex - Integrante 3",
+    "description": "Recibe un tableau de API 2 y devuelve iteraciones y resultado a API 4.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/salud": {
+      "get": {
+        "summary": "Comprobar Salud",
+        "operationId": "comprobar_salud_salud_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/validar-tableau": {
+      "post": {
+        "summary": "Validar Tableau",
+        "operationId": "validar_tableau_validar_tableau_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TableauEntrada"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/resolver": {
+      "post": {
+        "summary": "Resolver",
+        "description": "200 incluye OPTIMO, INFACTIBLE y NO_ACOTADO; 422 indica entrada inválida.\n\nUn límite de cálculo responde 409: nunca se inventa un estado matemático.",
+        "operationId": "resolver_resolver_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TableauEntrada"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultadoSimplex"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "IteracionSalida": {
+        "properties": {
+          "numero": {
+            "type": "integer",
+            "title": "Numero"
+          },
+          "fase": {
+            "type": "integer",
+            "enum": [
+              1,
+              2
+            ],
+            "title": "Fase"
+          },
+          "variable_entrante": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Variable Entrante"
+          },
+          "variable_saliente": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Variable Saliente"
+          },
+          "fila_pivote": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fila Pivote"
+          },
+          "columna_pivote": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Columna Pivote"
+          },
+          "elemento_pivote": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Elemento Pivote"
+          },
+          "tabla": {
+            "$ref": "#/components/schemas/TablaSalida"
+          },
+          "operaciones": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Operaciones"
+          }
+        },
+        "type": "object",
+        "required": [
+          "numero",
+          "fase",
+          "variable_entrante",
+          "variable_saliente",
+          "fila_pivote",
+          "columna_pivote",
+          "elemento_pivote",
+          "tabla",
+          "operaciones"
+        ],
+        "title": "IteracionSalida"
+      },
+      "ResultadoSimplex": {
+        "properties": {
+          "estado": {
+            "type": "string",
+            "enum": [
+              "OPTIMO",
+              "INFACTIBLE",
+              "NO_ACOTADO"
+            ],
+            "title": "Estado"
+          },
+          "valor_z": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Valor Z"
+          },
+          "solucion": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Solucion"
+          },
+          "iteraciones": {
+            "items": {
+              "$ref": "#/components/schemas/IteracionSalida"
+            },
+            "type": "array",
+            "title": "Iteraciones"
+          }
+        },
+        "type": "object",
+        "required": [
+          "estado",
+          "valor_z",
+          "solucion",
+          "iteraciones"
+        ],
+        "title": "ResultadoSimplex"
+      },
+      "TablaSalida": {
+        "properties": {
+          "columnas": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Columnas"
+          },
+          "filas": {
+            "items": {
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ]
+              },
+              "type": "array"
+            },
+            "type": "array",
+            "title": "Filas"
+          }
+        },
+        "type": "object",
+        "required": [
+          "columnas",
+          "filas"
+        ],
+        "title": "TablaSalida"
+      },
+      "TableauEntrada": {
+        "properties": {
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "MAX",
+              "MIN"
+            ],
+            "title": "Tipo"
+          },
+          "fase": {
+            "type": "integer",
+            "enum": [
+              1,
+              2
+            ],
+            "title": "Fase",
+            "default": 2
+          },
+          "columnas": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 128,
+            "minItems": 4,
+            "title": "Columnas"
+          },
+          "filas": {
+            "items": {
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ]
+              },
+              "type": "array"
+            },
+            "type": "array",
+            "maxItems": 61,
+            "minItems": 1,
+            "title": "Filas"
+          },
+          "objetivo_original": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "anyOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "number"
+                    }
+                  ]
+                },
+                "type": "object"
+              },
+              {
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "number"
+                    }
+                  ]
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Objetivo Original",
+            "description": "Lista en el orden de las columnas a-f de API 2, o diccionario por variable. Se normaliza a diccionario."
+          },
+          "variables_decision": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Variables Decision"
+          },
+          "variables_artificiales": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Variables Artificiales"
+          },
+          "requiere_fase1": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Requiere Fase1"
+          },
+          "max_iteraciones": {
+            "type": "integer",
+            "maximum": 1000.0,
+            "minimum": 1.0,
+            "title": "Max Iteraciones",
+            "default": 500
+          },
+          "mensaje": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mensaje"
+          },
+          "variables_basicas": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Variables Basicas"
+          },
+          "objetivo_auxiliar": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Objetivo Auxiliar"
+          },
+          "estado_preparacion": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Estado Preparacion"
+          },
+          "objetivo_fase2": {
+            "anyOf": [
+              {
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "number"
+                    }
+                  ]
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Objetivo Fase2"
+          },
+          "tipo_optimizacion_original": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "max",
+                  "min"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tipo Optimizacion Original"
+          },
+          "factor_recuperacion_z": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Factor Recuperacion Z"
+          },
+          "restricciones_redundantes": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Restricciones Redundantes"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "tipo",
+          "columnas",
+          "filas"
+        ],
+        "title": "TableauEntrada",
+        "examples": [
+          {
+            "columnas": [
+              "Base",
+              "a",
+              "b",
+              "h1",
+              "h2",
+              "h3",
+              "Solución"
+            ],
+            "fase": 2,
+            "filas": [
+              [
+                "Z",
+                -3,
+                -5,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                "h1",
+                1,
+                0,
+                1,
+                0,
+                0,
+                4
+              ],
+              [
+                "h2",
+                0,
+                1,
+                0,
+                1,
+                0,
+                6
+              ],
+              [
+                "h3",
+                3,
+                2,
+                0,
+                0,
+                1,
+                18
+              ]
+            ],
+            "objetivo_original": {
+              "a": 3,
+              "b": 5
+            },
+            "tipo": "MAX"
+          }
+        ]
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

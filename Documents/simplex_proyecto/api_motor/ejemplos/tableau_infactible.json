@@ -1,0 +1,69 @@
+{
+  "mensaje": "Tableau inicial generado correctamente",
+  "tipo": "MAX",
+  "fase": 1,
+  "columnas": [
+    "Base",
+    "a",
+    "b",
+    "e1",
+    "A1",
+    "h2",
+    "Solución"
+  ],
+  "filas": [
+    [
+      "P",
+      -1.0,
+      -1.0,
+      1,
+      0,
+      0,
+      -3.0
+    ],
+    [
+      "A1",
+      1.0,
+      1.0,
+      -1,
+      1,
+      0,
+      3.0
+    ],
+    [
+      "h2",
+      1.0,
+      1.0,
+      0,
+      0,
+      1,
+      1.0
+    ]
+  ],
+  "variables_basicas": [
+    "A1",
+    "h2"
+  ],
+  "variables_artificiales": [
+    "A1"
+  ],
+  "requiere_fase1": true,
+  "objetivo_original": [
+    1.0,
+    1.0
+  ],
+  "objetivo_auxiliar": "MAX P = -suma(artificiales)",
+  "estado_preparacion": "tableau_inicial_completo",
+  "objetivo_fase2": [
+    "Z",
+    -1.0,
+    -1.0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "tipo_optimizacion_original": "max",
+  "factor_recuperacion_z": 1,
+  "restricciones_redundantes": []
+}

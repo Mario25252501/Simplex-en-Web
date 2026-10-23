@@ -1,0 +1,115 @@
+{
+  "estado": "INFACTIBLE",
+  "valor_z": null,
+  "solucion": {},
+  "iteraciones": [
+    {
+      "numero": 0,
+      "fase": 1,
+      "variable_entrante": "a",
+      "variable_saliente": "h2",
+      "fila_pivote": 2,
+      "columna_pivote": 1,
+      "elemento_pivote": 1.0,
+      "tabla": {
+        "columnas": [
+          "Base",
+          "a",
+          "b",
+          "e1",
+          "A1",
+          "h2",
+          "Solución"
+        ],
+        "filas": [
+          [
+            "Z",
+            -1.0,
+            -1.0,
+            1.0,
+            0.0,
+            0.0,
+            -3.0
+          ],
+          [
+            "A1",
+            1.0,
+            1.0,
+            -1.0,
+            1.0,
+            0.0,
+            3.0
+          ],
+          [
+            "h2",
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ]
+        ]
+      },
+      "operaciones": [
+        "Fase I: maximizar Z auxiliar = -suma de variables artificiales.",
+        "Preparación ya aplicada: F0 = F0 - (1) * F1",
+        "F2 = F2 / (1)",
+        "F0 = F0 - (-1) * F2",
+        "F1 = F1 - (1) * F2"
+      ]
+    },
+    {
+      "numero": 1,
+      "fase": 1,
+      "variable_entrante": null,
+      "variable_saliente": null,
+      "fila_pivote": null,
+      "columna_pivote": null,
+      "elemento_pivote": null,
+      "tabla": {
+        "columnas": [
+          "Base",
+          "a",
+          "b",
+          "e1",
+          "A1",
+          "h2",
+          "Solución"
+        ],
+        "filas": [
+          [
+            "Z",
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            1.0,
+            -2.0
+          ],
+          [
+            "A1",
+            0.0,
+            0.0,
+            -1.0,
+            1.0,
+            -1.0,
+            2.0
+          ],
+          [
+            "a",
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ]
+        ]
+      },
+      "operaciones": [
+        "Infactible: el mínimo de la suma de artificiales es mayor que cero."
+      ]
+    }
+  ]
+}

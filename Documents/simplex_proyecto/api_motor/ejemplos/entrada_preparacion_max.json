@@ -1,0 +1,35 @@
+{
+  "tipo_optimizacion": "max",
+  "variables": 2,
+  "coeficientes_objetivo": [
+    3,
+    5
+  ],
+  "restricciones": [
+    {
+      "coeficientes": [
+        1,
+        0
+      ],
+      "signo": "<=",
+      "termino_independiente": 4
+    },
+    {
+      "coeficientes": [
+        0,
+        1
+      ],
+      "signo": "<=",
+      "termino_independiente": 6
+    },
+    {
+      "coeficientes": [
+        3,
+        2
+      ],
+      "signo": "<=",
+      "termino_independiente": 18
+    }
+  ],
+  "no_negatividad": true
+}

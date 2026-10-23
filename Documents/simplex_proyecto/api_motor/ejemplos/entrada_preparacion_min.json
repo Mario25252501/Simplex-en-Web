@@ -1,0 +1,27 @@
+{
+  "tipo_optimizacion": "min",
+  "variables": 2,
+  "coeficientes_objetivo": [
+    2,
+    3
+  ],
+  "restricciones": [
+    {
+      "coeficientes": [
+        1,
+        1
+      ],
+      "signo": ">=",
+      "termino_independiente": 4
+    },
+    {
+      "coeficientes": [
+        1,
+        2
+      ],
+      "signo": "=",
+      "termino_independiente": 6
+    }
+  ],
+  "no_negatividad": true
+}
