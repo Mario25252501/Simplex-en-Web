@@ -1,0 +1,48 @@
+/* Números alineados y centrados en la tabla del símplex */
+.tabla-simplex {
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  background: #fff;
+}
+
+/* Encabezado de la tabla */
+.tabla-simplex thead th {
+  background: #212529;
+  color: #fff;
+}
+
+/* Primera columna: nombre de la variable básica */
+.tabla-simplex td.nombre-fila {
+  font-weight: 600;
+  background: #f1f3f5;
+}
+
+/* Línea gruesa debajo de la fila de Z */
+.tabla-simplex tr.fila-z td {
+  border-bottom: 2px solid #212529;
+}
+
+/* Fila y columna del pivote: amarillo suave */
+.tabla-simplex .fila-pivote,
+.tabla-simplex .col-pivote {
+  background: #fff3cd;
+}
+
+/* Encabezado de la columna pivote */
+.tabla-simplex thead th.col-pivote {
+  background: #fd7e14;
+  color: #fff;
+}
+
+/* Elemento pivote: amarillo fuerte con borde naranja */
+.tabla-simplex .pivote {
+  background: #ffc107;
+  font-weight: 700;
+  outline: 3px solid #fd7e14;
+  outline-offset: -3px;
+}
+
+/* Lista de operaciones con letra de código */
+.operaciones code {
+  font-size: 0.95rem;
+}
