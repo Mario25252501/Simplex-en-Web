@@ -172,5 +172,9 @@ $("btn-siguiente").addEventListener("click", () => { if (indice < resultado.iter
 // Botón para volver a cargar el historial
 $("btn-actualizar").addEventListener("click", cargarHistorial);
 
-// Al abrir la página, carga el historial
-cargarHistorial();
+// Al abrir la página, carga el historial y abre el problema indicado en la dirección (?id=...)
+cargarHistorial().then(() => {
+  const id = new URLSearchParams(location.search).get("id");
+  const boton = id && document.querySelector(`#historial button[data-id="${id}"]`);
+  if (boton) boton.click();
+});
