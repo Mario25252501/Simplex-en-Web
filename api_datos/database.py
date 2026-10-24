@@ -10,9 +10,5 @@ load_dotenv(dotenv_path=env_path)
 
 URL = os.getenv("DATABASE_URL")
 
-# Línea temporal de prueba para verificar que ya no sea None
-print("--> RUTA DEL .ENV:", env_path)
-print("--> URL LEÍDA:", URL)
-
 engine = create_engine(URL)
 SessionLocal = sessionmaker(bind=engine)
