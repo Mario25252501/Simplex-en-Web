@@ -1,0 +1,269 @@
+{
+  "estado": "OPTIMO",
+  "valor_z": 10.0,
+  "solucion": {
+    "a": 2.0,
+    "b": 2.0
+  },
+  "iteraciones": [
+    {
+      "numero": 0,
+      "fase": 1,
+      "variable_entrante": "b",
+      "variable_saliente": "A2",
+      "fila_pivote": 2,
+      "columna_pivote": 2,
+      "elemento_pivote": 2.0,
+      "tabla": {
+        "columnas": [
+          "Base",
+          "a",
+          "b",
+          "e1",
+          "A1",
+          "A2",
+          "Solución"
+        ],
+        "filas": [
+          [
+            "Z",
+            -2.0,
+            -3.0,
+            1.0,
+            0.0,
+            0.0,
+            -10.0
+          ],
+          [
+            "A1",
+            1.0,
+            1.0,
+            -1.0,
+            1.0,
+            0.0,
+            4.0
+          ],
+          [
+            "A2",
+            1.0,
+            2.0,
+            0.0,
+            0.0,
+            1.0,
+            6.0
+          ]
+        ]
+      },
+      "operaciones": [
+        "Fase I: maximizar Z auxiliar = -suma de variables artificiales.",
+        "Preparación ya aplicada: F0 = F0 - (1) * F1",
+        "Preparación ya aplicada: F0 = F0 - (1) * F2",
+        "F2 = F2 / (2)",
+        "F0 = F0 - (-3) * F2",
+        "F1 = F1 - (1) * F2"
+      ]
+    },
+    {
+      "numero": 1,
+      "fase": 1,
+      "variable_entrante": "a",
+      "variable_saliente": "A1",
+      "fila_pivote": 1,
+      "columna_pivote": 1,
+      "elemento_pivote": 0.5,
+      "tabla": {
+        "columnas": [
+          "Base",
+          "a",
+          "b",
+          "e1",
+          "A1",
+          "A2",
+          "Solución"
+        ],
+        "filas": [
+          [
+            "Z",
+            -0.5,
+            0.0,
+            1.0,
+            0.0,
+            1.5,
+            -1.0
+          ],
+          [
+            "A1",
+            0.5,
+            0.0,
+            -1.0,
+            1.0,
+            -0.5,
+            1.0
+          ],
+          [
+            "b",
+            0.5,
+            1.0,
+            0.0,
+            0.0,
+            0.5,
+            3.0
+          ]
+        ]
+      },
+      "operaciones": [
+        "F1 = F1 / (1/2)",
+        "F0 = F0 - (-1/2) * F1",
+        "F2 = F2 - (1/2) * F1"
+      ]
+    },
+    {
+      "numero": 2,
+      "fase": 1,
+      "variable_entrante": null,
+      "variable_saliente": null,
+      "fila_pivote": null,
+      "columna_pivote": null,
+      "elemento_pivote": null,
+      "tabla": {
+        "columnas": [
+          "Base",
+          "a",
+          "b",
+          "e1",
+          "A1",
+          "A2",
+          "Solución"
+        ],
+        "filas": [
+          [
+            "Z",
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0
+          ],
+          [
+            "a",
+            1.0,
+            0.0,
+            -2.0,
+            2.0,
+            -1.0,
+            2.0
+          ],
+          [
+            "b",
+            0.0,
+            1.0,
+            1.0,
+            -1.0,
+            1.0,
+            2.0
+          ]
+        ]
+      },
+      "operaciones": []
+    },
+    {
+      "numero": 3,
+      "fase": 1,
+      "variable_entrante": null,
+      "variable_saliente": null,
+      "fila_pivote": null,
+      "columna_pivote": null,
+      "elemento_pivote": null,
+      "tabla": {
+        "columnas": [
+          "Base",
+          "a",
+          "b",
+          "e1",
+          "A1",
+          "A2",
+          "Solución"
+        ],
+        "filas": [
+          [
+            "Z",
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            0.0
+          ],
+          [
+            "a",
+            1.0,
+            0.0,
+            -2.0,
+            2.0,
+            -1.0,
+            2.0
+          ],
+          [
+            "b",
+            0.0,
+            1.0,
+            1.0,
+            -1.0,
+            1.0,
+            2.0
+          ]
+        ]
+      },
+      "operaciones": [
+        "Retirar columnas artificiales: A1, A2"
+      ]
+    },
+    {
+      "numero": 4,
+      "fase": 2,
+      "variable_entrante": null,
+      "variable_saliente": null,
+      "fila_pivote": null,
+      "columna_pivote": null,
+      "elemento_pivote": null,
+      "tabla": {
+        "columnas": [
+          "Base",
+          "a",
+          "b",
+          "e1",
+          "Solución"
+        ],
+        "filas": [
+          [
+            "Z",
+            0.0,
+            0.0,
+            1.0,
+            -10.0
+          ],
+          [
+            "a",
+            1.0,
+            0.0,
+            -2.0,
+            2.0
+          ],
+          [
+            "b",
+            0.0,
+            1.0,
+            1.0,
+            2.0
+          ]
+        ]
+      },
+      "operaciones": [
+        "Fase II: resolver MIN Z como MAX (-Z).",
+        "Preparación ya aplicada: F0 = F0 - (2) * F1",
+        "Preparación ya aplicada: F0 = F0 - (3) * F2"
+      ]
+    }
+  ]
+}

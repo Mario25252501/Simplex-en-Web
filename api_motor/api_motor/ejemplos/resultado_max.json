@@ -1,0 +1,196 @@
+{
+  "estado": "OPTIMO",
+  "valor_z": 36.0,
+  "solucion": {
+    "a": 2.0,
+    "b": 6.0
+  },
+  "iteraciones": [
+    {
+      "numero": 0,
+      "fase": 2,
+      "variable_entrante": "b",
+      "variable_saliente": "h2",
+      "fila_pivote": 2,
+      "columna_pivote": 2,
+      "elemento_pivote": 1.0,
+      "tabla": {
+        "columnas": [
+          "Base",
+          "a",
+          "b",
+          "h1",
+          "h2",
+          "h3",
+          "Solución"
+        ],
+        "filas": [
+          [
+            "Z",
+            -3.0,
+            -5.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            "h1",
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            4.0
+          ],
+          [
+            "h2",
+            0.0,
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            6.0
+          ],
+          [
+            "h3",
+            3.0,
+            2.0,
+            0.0,
+            0.0,
+            1.0,
+            18.0
+          ]
+        ]
+      },
+      "operaciones": [
+        "Fase II: reconstruir el objetivo original.",
+        "F2 = F2 / (1)",
+        "F0 = F0 - (-5) * F2",
+        "F3 = F3 - (2) * F2"
+      ]
+    },
+    {
+      "numero": 1,
+      "fase": 2,
+      "variable_entrante": "a",
+      "variable_saliente": "h3",
+      "fila_pivote": 3,
+      "columna_pivote": 1,
+      "elemento_pivote": 3.0,
+      "tabla": {
+        "columnas": [
+          "Base",
+          "a",
+          "b",
+          "h1",
+          "h2",
+          "h3",
+          "Solución"
+        ],
+        "filas": [
+          [
+            "Z",
+            -3.0,
+            0.0,
+            0.0,
+            5.0,
+            0.0,
+            30.0
+          ],
+          [
+            "h1",
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            4.0
+          ],
+          [
+            "b",
+            0.0,
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            6.0
+          ],
+          [
+            "h3",
+            3.0,
+            0.0,
+            0.0,
+            -2.0,
+            1.0,
+            6.0
+          ]
+        ]
+      },
+      "operaciones": [
+        "F3 = F3 / (3)",
+        "F0 = F0 - (-3) * F3",
+        "F1 = F1 - (1) * F3"
+      ]
+    },
+    {
+      "numero": 2,
+      "fase": 2,
+      "variable_entrante": null,
+      "variable_saliente": null,
+      "fila_pivote": null,
+      "columna_pivote": null,
+      "elemento_pivote": null,
+      "tabla": {
+        "columnas": [
+          "Base",
+          "a",
+          "b",
+          "h1",
+          "h2",
+          "h3",
+          "Solución"
+        ],
+        "filas": [
+          [
+            "Z",
+            0.0,
+            0.0,
+            0.0,
+            3.0,
+            1.0,
+            36.0
+          ],
+          [
+            "h1",
+            0.0,
+            0.0,
+            1.0,
+            0.6666666666666666,
+            -0.3333333333333333,
+            2.0
+          ],
+          [
+            "b",
+            0.0,
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            6.0
+          ],
+          [
+            "a",
+            1.0,
+            0.0,
+            0.0,
+            -0.6666666666666666,
+            0.3333333333333333,
+            2.0
+          ]
+        ]
+      },
+      "operaciones": []
+    }
+  ]
+}

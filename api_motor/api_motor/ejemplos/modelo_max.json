@@ -1,0 +1,34 @@
+{
+  "nombre": "MAX del grupo",
+  "tipo": "MAX",
+  "objetivo": {
+    "a": 3,
+    "b": 5
+  },
+  "restricciones": [
+    {
+      "coeficientes": {
+        "a": 1,
+        "b": 0
+      },
+      "signo": "<=",
+      "termino_independiente": 4
+    },
+    {
+      "coeficientes": {
+        "a": 0,
+        "b": 1
+      },
+      "signo": "<=",
+      "termino_independiente": 6
+    },
+    {
+      "coeficientes": {
+        "a": 3,
+        "b": 2
+      },
+      "signo": "<=",
+      "termino_independiente": 18
+    }
+  ]
+}

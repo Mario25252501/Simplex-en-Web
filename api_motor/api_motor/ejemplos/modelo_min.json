@@ -1,0 +1,26 @@
+{
+  "nombre": "MIN del compañero",
+  "tipo": "MIN",
+  "objetivo": {
+    "a": 2,
+    "b": 3
+  },
+  "restricciones": [
+    {
+      "coeficientes": {
+        "a": 1,
+        "b": 1
+      },
+      "signo": ">=",
+      "termino_independiente": 4
+    },
+    {
+      "coeficientes": {
+        "a": 1,
+        "b": 2
+      },
+      "signo": "=",
+      "termino_independiente": 6
+    }
+  ]
+}

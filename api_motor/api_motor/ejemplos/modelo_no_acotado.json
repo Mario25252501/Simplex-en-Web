@@ -1,0 +1,18 @@
+{
+  "nombre": "Objetivo sin cota",
+  "tipo": "MAX",
+  "objetivo": {
+    "a": 1,
+    "b": 1
+  },
+  "restricciones": [
+    {
+      "coeficientes": {
+        "a": 1,
+        "b": -1
+      },
+      "signo": "<=",
+      "termino_independiente": 1
+    }
+  ]
+}

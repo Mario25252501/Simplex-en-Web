@@ -1,0 +1,26 @@
+{
+  "nombre": "Restricciones incompatibles",
+  "tipo": "MAX",
+  "objetivo": {
+    "a": 1,
+    "b": 1
+  },
+  "restricciones": [
+    {
+      "coeficientes": {
+        "a": 1,
+        "b": 1
+      },
+      "signo": ">=",
+      "termino_independiente": 3
+    },
+    {
+      "coeficientes": {
+        "a": 1,
+        "b": 1
+      },
+      "signo": "<=",
+      "termino_independiente": 1
+    }
+  ]
+}

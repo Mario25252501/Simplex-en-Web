@@ -1,0 +1,77 @@
+{
+  "mensaje": "Tableau inicial generado correctamente",
+  "tipo": "MAX",
+  "fase": 2,
+  "columnas": [
+    "Base",
+    "a",
+    "b",
+    "h1",
+    "h2",
+    "h3",
+    "Solución"
+  ],
+  "filas": [
+    [
+      "Z",
+      -3.0,
+      -5.0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      "h1",
+      1.0,
+      0.0,
+      1,
+      0,
+      0,
+      4.0
+    ],
+    [
+      "h2",
+      0.0,
+      1.0,
+      0,
+      1,
+      0,
+      6.0
+    ],
+    [
+      "h3",
+      3.0,
+      2.0,
+      0,
+      0,
+      1,
+      18.0
+    ]
+  ],
+  "variables_basicas": [
+    "h1",
+    "h2",
+    "h3"
+  ],
+  "variables_artificiales": [],
+  "requiere_fase1": false,
+  "objetivo_original": [
+    3.0,
+    5.0
+  ],
+  "objetivo_auxiliar": null,
+  "estado_preparacion": "tableau_inicial_completo",
+  "objetivo_fase2": [
+    "Z",
+    -3.0,
+    -5.0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "tipo_optimizacion_original": "max",
+  "factor_recuperacion_z": 1,
+  "restricciones_redundantes": []
+}
